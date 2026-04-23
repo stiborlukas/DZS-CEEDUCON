@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>title</title>
+    <title>CEEduCon 2026</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -11,6 +11,77 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="logo-block">
+                <div class="conf-name">CEEduCon 2026</div>
+                <div class="conf-sub">Central European Conference on Internationalisation of Higher Education</div>
+            </div>
+            <div class="header-actions">
+                <div class="live-badge"><span class="live-dot"></span>Live program</div>
+                <div class="live-clock" id="liveClock"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- TOOLBAR -->
+    <div class="toolbar">
+        <div class="toolbar-inner">
+            <div class="day-tabs" id="dayTabs"></div>
+            <div class="sep"></div>
+            <div class="filter-group">
+                <span class="filter-label">Téma:</span>
+                <button class="filter-btn active" data-track="all">Vše</button>
+                <button class="filter-btn" data-track="smart">Smart</button>
+                <button class="filter-btn" data-track="intl">Intl. for All</button>
+                <button class="filter-btn" data-track="global">Global</button>
+                <button class="filter-btn" data-track="alumni">Alumni</button>
+            </div>
+            <div class="spacer"></div>
+            <div class="view-toggle">
+                <button class="view-btn active" id="btnGrid" title="Tabulka">
+                    <svg viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>
+                </button>
+
+                <button class="view-btn" id="btnList" title="Karty">
+                    <svg viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="2" width="14" height="3" rx="1"/><rect x="1" y="7" width="14" height="3" rx="1"/><rect x="1" y="12" width="14" height="3" rx="1"/></svg>
+                </button>
+            </div>
+
+            <button class="btn-print" onclick="window.print()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                <span>Tisk / PDF</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- LEGEND -->
+    <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--indigo)"></div>Smart &amp; Sustainable International Cooperation</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--pink)"></div>Internationalisation for All</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--amber)"></div>Global &amp; Regional Partnerships</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--teal)"></div>Alumni - Employability - Future Skills</div>
+    </div>
+
+    <!-- MAIN -->
+    <main class="main">
+        <div class="grid-view-wrap" id="gridView"></div>
+        <div class="schedule-list" id="listView"></div>
+    </main>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">✕</button>
+            <div class="modal-bar" id="modalBar"></div>
+            <div class="modal-room" id="modalRoom"></div>
+            <div class="modal-time" id="modalTime"></div>
+            <div class="modal-title" id="modalTitle"></div>
+            <span class="modal-track-label" id="modalTrackLabel"></span>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
