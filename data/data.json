@@ -1,0 +1,224 @@
+{
+  "days": [
+    {
+      "id": 1,
+      "label": "Den 1 - Čt 15. 5.",
+      "rooms": ["C1", "C2", "C3", "D2", "D3+D4", "D6+D7", "E1", "E2"],
+      "slots": [
+        {
+          "type": "special",
+          "time": "8:30",
+          "timeEnd": "9:30",
+          "slotKey": 830,
+          "variant": "registration",
+          "label": "Registrace účastníků - Registration Open",
+          "icon": "person"
+        },
+        {
+          "type": "special",
+          "time": "9:30",
+          "timeEnd": "10:40",
+          "slotKey": 930,
+          "variant": "plenary",
+          "label": "Zahájení konference - Opening",
+          "rooms": ["C1", "C2", "C3"],
+          "track": "smart",
+          "title": "Zahájení konference - Opening"
+        },
+        {
+          "type": "special",
+          "time": "10:40",
+          "timeEnd": "11:00",
+          "slotKey": 1040,
+          "variant": "coffee",
+          "label": "Coffee Break"
+        },
+        {
+          "type": "sessions",
+          "time": "11:00",
+          "timeEnd": "12:00",
+          "slotKey": 1100,
+          "plenary": {
+            "rooms": ["C1", "C2", "C3"],
+            "track": "smart",
+            "title": "Opening Panel"
+          },
+          "sessions": {
+            "D2": {
+              "track": "intl",
+              "title": "Unlocking Opportunities: European Solidarity Corps Programme"
+            },
+            "D3+D4": {
+              "track": "global",
+              "title": "Advancing Strategic Global & Regional Partnerships: Insights and Lessons from European University Alliances"
+            },
+            "D6+D7": {
+              "track": "alumni",
+              "title": "Modern Trends, Technologies, and Tools to Boost International Alumni Relations"
+            },
+            "E1": {
+              "track": "intl",
+              "title": "The Emerging Role of Inclusion Officers in HEIs and in Erasmus+"
+            },
+            "E2": {
+              "track": "smart",
+              "title": "Smart Tools for Smart Mobility: AI in the Daily Work of International Offices"
+            }
+          }
+        },
+        {
+          "type": "special",
+          "time": "12:00",
+          "timeEnd": "13:30",
+          "slotKey": 1200,
+          "variant": "lunch",
+          "label": "Oběd - Lunch"
+        },
+        {
+          "type": "sessions",
+          "time": "13:30",
+          "timeEnd": "14:10",
+          "slotKey": 1330,
+          "sessions": {
+            "C1": {
+              "track": "intl",
+              "title": "Learning Together: New Approaches to Collaboration Between Domestic and International Students"
+            },
+            "C2": {
+              "track": "intl",
+              "title": "Breaking Barriers: Towards Automatic Credit Recognition for Inclusive Mobility"
+            },
+            "C3": {
+              "track": "intl",
+              "title": "VE for All - Chances and Challenges of VE in Less Developed Areas"
+            },
+            "D2": {
+              "track": "smart",
+              "title": "Next Gen Student Communities: Futures Thinking for European Universities"
+            },
+            "D3+D4": {
+              "track": "global",
+              "title": "But It Really Is Our Degree: 20 Years of International Partnership - Lessons Learned"
+            },
+            "D6+D7": {
+              "track": "alumni",
+              "title": "Developing Intercultural Competence and Work-Related Skills Thanks to a Virtual Exchange Project"
+            },
+            "E1": {
+              "track": "global",
+              "title": "International Credit Mobility: Challenges of Cooperation with Non-EU Countries"
+            },
+            "E2": {
+              "track": "smart",
+              "title": "Creating Together: VSB-TUO's Blended Intensive Programmes in the U!REKA Alliance"
+            }
+          }
+        },
+        {
+          "type": "sessions",
+          "time": "14:20",
+          "timeEnd": "15:20",
+          "slotKey": 1420,
+          "sessions": {
+            "C1": {
+              "track": "global",
+              "title": "A Snapshot of National Policies for Internationalisation in Europe Today"
+            },
+            "C2": {
+              "track": "intl",
+              "title": "Embedding Internationalisation for All: Strategies for Systemic Change"
+            },
+            "C3": {
+              "track": "alumni",
+              "title": "Skills in Focus: University-Industry Cooperation in STEM Education"
+            },
+            "D2": {
+              "track": "intl",
+              "title": "Questionnaire - Experience from Abroad"
+            },
+            "D3+D4": {
+              "track": "intl",
+              "title": "Quality Assurance in Erasmus Mundus Programmes: Good Practice and Processes"
+            },
+            "D6+D7": {
+              "track": "intl",
+              "title": "Europe Comes to Class: A Best Practice from Germany's \"Europa macht Schule\" Program"
+            },
+            "E1": {
+              "track": "global",
+              "title": "Recognition of Prior Learning in Europe: Comparative Insights and Potentials"
+            },
+            "E2": {
+              "track": "alumni",
+              "title": "Internationalisation without Mobility: How to Actively Engage Mobility Alumni and Youth Organisations"
+            }
+          }
+        },
+        {
+          "type": "special",
+          "time": "15:20",
+          "timeEnd": "15:50",
+          "slotKey": 1520,
+          "variant": "coffee",
+          "label": "Coffee Break"
+        },
+        {
+          "type": "sessions",
+          "time": "15:50",
+          "timeEnd": "16:50",
+          "slotKey": 1550,
+          "sessions": {
+            "C1": {
+              "track": "smart",
+              "title": "Enabling Green Mobility: Student Perspectives and University Practices"
+            },
+            "C2": {
+              "track": "global",
+              "title": "Critical Perspectives on Geopolitical Issues to Current International Higher Education"
+            },
+            "C3": {
+              "track": "alumni",
+              "title": "Building the Case: Why International Students Matter"
+            },
+            "D2": {
+              "track": "intl",
+              "title": "Didactic Erasmus Bingo: A Playful Tool for Evaluating Teaching Methods in Higher Education"
+            },
+            "D3+D4": {
+              "track": "smart",
+              "title": "Empowering Educators: Border-crossing co-creation in the EPICUR Centre for International Teaching and Learning"
+            },
+            "D6+D7": {
+              "track": "alumni",
+              "title": "Careers in Chaos: Career Education for a Changing Global Market"
+            },
+            "E1": {
+              "track": "intl",
+              "title": "Internationalisation and Inclusion: the SENSEI Approach"
+            },
+            "E2": {
+              "track": "intl",
+              "title": "Shifting the Lens: Rethinking Support for International Students - From Preparation to Reflection: Intercultural Readiness in Action"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Den 2 - Pá 16. 5.",
+      "rooms": ["C1", "C2", "C3", "D2", "D3+D4", "D6+D7", "E1", "E2"],
+      "slots": [
+        {
+          "type": "special",
+          "time": "9:00",
+          "timeEnd": "9:30",
+          "slotKey": 900,
+          "variant": "registration",
+          "label": "Registrace - Registration Open",
+          "icon": "person"
+        }
+      ]
+    }
+  ]
+}
