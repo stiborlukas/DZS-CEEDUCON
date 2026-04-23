@@ -31,3 +31,31 @@ async function loadData() {
 loadData();
 
 // Render data into the page
+function renderGrid(day) {
+    console.log('Rendering grid for day', day);
+}
+
+// Filters select and toggle
+function applyFilter() {
+    document.querySelectorAll('.session:not(.plenery)').forEach(s => {
+        s.classList.toggle('dimmed', activeTrack !== 'all' && s.dataset.track !== activeTrack);
+    });
+    document.querySelectorAll('.card:not(.card-special)').forEach(c => {
+        c.classList.toggle('dimmed', activeTrack !== 'all' && c.dataset.track !== activeTrack);
+    });
+}
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const track = btn.dataset.track;
+        // Toggle: if clicking the already active filter, revert to default 'all'
+        activeTrack = (activeTrack === track) ? 'all' : track;
+
+        // Update active classes
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        const activeBtn = document.querySelector(`.filter-btn[data-track="${activeTrack}"]`);
+        if (activeBtn) activeBtn.classList.add('active');
+
+        applyFilter();
+    });
+});
