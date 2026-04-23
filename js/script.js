@@ -3,6 +3,8 @@ const TRACK_COLORS = {
   smart: '#5b6af0', intl: '#d6247a', global: '#e8a020', alumni: '#0099a8'
 };
 
+let SCHEDULE_DATA = null;
+
 let activeTrack = 'all';
 let activeDayId = 1;
 let viewMode    = 'grid'; // 'grid' | 'list'
@@ -22,7 +24,10 @@ async function loadData() {
     if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
     const data = await res.json();
     console.log('loaded data', data);
-    renderData(data);
+    
+    SCHEDULE_DATA = data;
+    mount(activeDayId);
+
   } catch (err) {
     console.error('Failed to load JSON:', err);
   }
@@ -30,9 +35,34 @@ async function loadData() {
 
 loadData();
 
-// Render data into the page
 function renderGrid(day) {
-    console.log('Rendering grid for day', day);
+    if (!day || !day.slots) {
+        return '<div class="empty">no data for this day</div>';
+    }
+
+    const rooms = day.rooms; 
+    let html = '';
+
+    day.slots.forEach(slot => {        
+        if (slot.type === 'sessions') {
+            rooms.forEach(room => {
+                const session = slot.sessions[room];
+                
+                if (session) {
+                    const track = session.track || '';
+                    const title = session.title || '';
+                    
+                    html += `
+                        <div class="session" data-track="${track}">
+                            <div class="session-title">${title}</div>
+                            <div class="session-room">${room}</div>
+                        </div>`;
+                }
+            });
+        }
+    });
+
+    return html;
 }
 
 // Filters select and toggle
@@ -59,3 +89,17 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
         applyFilter();
     });
 });
+
+// initialization and day switching
+function getDay(id) {
+    return SCHEDULE_DATA.days.find(d => d.id === id) || SCHEDULE_DATA.days[0];
+}
+
+function mount(dayId) {
+    activeDayId = dayId;
+    const day = getDay(dayId);
+    document.getElementById('gridView').innerHTML = renderGrid(day);
+    //document.getElementById('listView').innerHTML = renderList(day);
+
+    applyFilter();
+}
