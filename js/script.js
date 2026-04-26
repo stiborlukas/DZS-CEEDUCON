@@ -76,12 +76,8 @@ function buildDayTabs() {
   });
 }
 
-
- 
-
-
 function variantLabel(v) {
-    return { registration: 'Registrace', coffee: 'Přestávka', lunch: 'Oběd' }[v] || v;
+    return { registration: 'Registration', coffee: 'Coffee Break', lunch: 'Lunch' }[v] || v;
 }
 
 function esc(str) {
@@ -131,20 +127,23 @@ function mount(dayId) {
     highlightNow();
 }
 
-// Filter tlačítka — generována z TRACK_META
+// filter buttons 
 const filterEl = document.getElementById('filterGroup') || document.querySelector('.filter-group');
 if (filterEl) {
-    filterEl.innerHTML = `<span class="filter-label">Téma:</span>`;
-    [{ key: 'all', label: 'Vše' }, ...Object.entries(TRACK_META).map(([k, v]) => ({ key: k, label: v.label }))].forEach(({ key, label }) => {
+    filterEl.innerHTML = `<span class="filter-label">Theme:</span>`;
+    [{ key: 'all', label: 'All' }, ...Object.entries(TRACK_META).map(([k, v]) => ({ key: k, label: v.label }))].forEach(({ key, label }) => {
         const btn = Object.assign(document.createElement('button'), {
             className: 'filter-btn' + (key === 'all' ? ' active' : ''),
-            textContent: key === 'all' ? 'Vše' : label,
+            textContent: key === 'all' ? 'All' : label,
         });
         btn.dataset.track = key;
         btn.addEventListener('click', () => {
-            activeTrack = key;
+            // toggle behavior: if clicking the already active filter, revert to default 'all'
+            activeTrack = (activeTrack === key) ? 'all' : key;
             filterEl.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            const activeBtn = filterEl.querySelector(`.filter-btn[data-track="${activeTrack}"]`);
+            if (activeBtn) activeBtn.classList.add('active');
+
             applyFilter();
         });
         filterEl.appendChild(btn);
@@ -153,7 +152,7 @@ if (filterEl) {
   console.warn('filter element not found (expected id="filterGroup" or class="filter-group")');
 }
 
-// Legenda — generována z TRACK_META
+// Legend
 const legendEl = document.getElementById('legend') || document.querySelector('.legend');
 if (legendEl) {
     legendEl.innerHTML = ''; // reset to avoid duplication
@@ -166,7 +165,7 @@ if (legendEl) {
   console.warn('legend element not found (expected id="legend" or class="legend")');
 }
 
-// VIEW TOGGLE — guardované přidání listenerů (prvky mohou v HTML chybět)
+// VIEW TOGGLE
 const gridViewEl = document.getElementById('gridView');
 const listViewEl = document.getElementById('listView');
 
