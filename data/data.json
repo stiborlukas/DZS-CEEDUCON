@@ -2,7 +2,7 @@
   "days": [
     {
       "id": 1,
-      "label": "Den 1 - Čt 15. 5.",
+      "label": "Day 1 - 15. 5.",
       "rooms": ["C1", "C2", "C3", "D2", "D3+D4", "D6+D7", "E1", "E2"],
       "slots": [
         {
@@ -11,7 +11,7 @@
           "timeEnd": "9:30",
           "slotKey": 830,
           "variant": "registration",
-          "label": "Registrace účastníků - Registration Open",
+          "label": "Registration Open",
           "icon": "person"
         },
         {
@@ -20,10 +20,10 @@
           "timeEnd": "10:40",
           "slotKey": 930,
           "variant": "plenary",
-          "label": "Zahájení konference - Opening",
+          "label": "Opening",
           "rooms": ["C1", "C2", "C3"],
           "track": "smart",
-          "title": "Zahájení konference - Opening"
+          "title": "Opening"
         },
         {
           "type": "special",
@@ -72,7 +72,7 @@
           "timeEnd": "13:30",
           "slotKey": 1200,
           "variant": "lunch",
-          "label": "Oběd - Lunch"
+          "label": "Lunch time"
         },
         {
           "type": "sessions",
@@ -206,7 +206,7 @@
     },
     {
       "id": 2,
-      "label": "Den 2 - Pá 16. 5.",
+      "label": "Day 2 - 16. 5.",
       "rooms": ["C1", "C2", "C3", "D2", "D3+D4", "D6+D7", "E1", "E2"],
       "slots": [
         {
@@ -215,7 +215,7 @@
           "timeEnd": "9:30",
           "slotKey": 900,
           "variant": "registration",
-          "label": "Registrace - Registration Open",
+          "label": "Registration Open",
           "icon": "person"
         }
       ]
